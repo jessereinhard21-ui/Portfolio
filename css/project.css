@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===== BASE ===== */
+:root {
+  --bg: #0a0a0a;
+  --text: #888;
+  --text-light: #bbb;
+  --heading: #f0f0f0;
+  --accent: #c8ff00;
+  --border: #1e1e1e;
+  --gap: 0.6rem;
+  --side: clamp(2rem, 5vw, 6rem);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img, video { display: block; max-width: 100%; }
+
+/* noise */
+.noise {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9999; opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ===== NAV ===== */
+.project-nav {
+  position: fixed; top: 0; left: 0; width: 100%;
+  z-index: 100;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--side);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.back-link {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s, gap 0.3s;
+}
+
+.back-link:hover {
+  color: var(--heading);
+  gap: 0.8rem;
+}
+
+.project-nav .logo {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.05rem;
+  color: var(--heading);
+  letter-spacing: 0.5px;
+}
+
+/* ===== PROJECT PAGE ===== */
+.project {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px var(--side) 6rem;
+}
+
+.project-header {
+  margin-bottom: 3rem;
+}
+
+.project-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  font-family: "Abril Fatface", cursive;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  color: var(--heading);
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+/* Main hero video */
+.project-hero {
+  width: 100%;
+  margin-bottom: 4rem;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #000;
+}
+
+.project-hero video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Description — narrow column, readable */
+.project-desc {
+  max-width: 680px;
+  margin: 0 auto 5rem;
+  padding: 0 0.5rem;
+}
+
+.project-desc p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+.project-desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* Secondary video/image grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  margin-bottom: 4rem;
+}
+
+.project-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-media {
+  overflow: hidden;
+  border-radius: 2px;
+  background: #000;
+  aspect-ratio: 16/10;
+}
+
+.project-media video,
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-media:hover video,
+.project-media:hover img {
+  transform: scale(1.03);
+}
+
+/* External link button */
+.project-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--heading);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn i { font-size: 1rem; }
+
+/* Footer */
+.project-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem var(--side);
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text);
+  letter-spacing: 1px;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .project {
+    padding: 120px var(--side) 4rem;
+  }
+
+  .project-grid,
+  .project-grid.three {
+    grid-template-columns: 1fr;
+  }
+
+  .project-desc {
+    margin-bottom: 3.5rem;
+  }
+}
