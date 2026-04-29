@@ -76,7 +76,7 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".work-item, .about-inner, .stills-heading, .stills-group").forEach(el => {
+document.querySelectorAll(".about-inner, .stills-heading, .stills-group").forEach(el => {
   el.style.opacity = "0";
   el.style.transform = "translateY(20px)";
   el.style.transition = "opacity 0.6s ease, transform 0.6s ease";

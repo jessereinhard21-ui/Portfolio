@@ -8,7 +8,7 @@
   --heading: #f0f0f0;
   --accent: #c8ff00;
   --border: #1e1e1e;
-  --gap: 0.6rem;
+  --gap: 1.5rem;
   --side: clamp(2rem, 5vw, 6rem);
 }
 
@@ -110,7 +110,7 @@ img, video { display: block; max-width: 100%; }
 .project-hero {
   width: 100%;
   margin-bottom: 4rem;
-  border-radius: 2px;
+  border-radius: 12px;
   overflow: hidden;
   background: #000;
 }
@@ -153,7 +153,7 @@ img, video { display: block; max-width: 100%; }
 
 .project-media {
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 10px;
   background: #000;
   aspect-ratio: 16/10;
 }

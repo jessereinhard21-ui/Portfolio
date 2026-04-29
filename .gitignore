@@ -1,6 +1,10 @@
 # Large media kept locally, excluded from repo
 large_files/
 assets/_unused/
+PortFolio of all my works/
+
+# Local tooling
+.claude/
 
 # macOS junk
 .DS_Store

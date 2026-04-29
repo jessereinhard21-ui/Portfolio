@@ -10,6 +10,7 @@
   --border: #1e1e1e;
   --gap: 0.6rem;
   --side: clamp(2rem, 5vw, 6rem);
+  --max-w: 1400px;
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,7 +53,7 @@ header.scrolled {
 }
 
 nav {
-  max-width: 1100px;
+  max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--side);
   display: flex;
@@ -96,7 +97,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  max-width: 1100px;
+  max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--side);
   gap: 5rem;
@@ -121,19 +122,19 @@ nav {
 
 .hero-img {
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 12px;
 }
 
 .hero-img img,
 .hero-img video {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   object-fit: cover;
 }
 
 /* ===== WORK ===== */
 .work {
-  max-width: 1100px;
+  max-width: var(--max-w);
   margin: 0 auto;
   padding: 4rem var(--side) 6rem;
 }
@@ -280,7 +281,7 @@ nav {
   overflow: hidden;
   cursor: pointer;
   aspect-ratio: 4/5;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .still-item.landscape {
@@ -341,7 +342,7 @@ nav {
 
 /* ===== ABOUT ===== */
 .about {
-  max-width: 1100px;
+  max-width: var(--max-w);
   margin: 0 auto;
   padding: 6rem var(--side);
   border-top: 1px solid var(--border);
@@ -399,7 +400,7 @@ nav {
 
 /* ===== FOOTER ===== */
 footer {
-  max-width: 1100px;
+  max-width: var(--max-w);
   margin: 0 auto;
   text-align: center;
   padding: 2.5rem var(--side);
@@ -419,10 +420,11 @@ footer {
   }
 
   .hero-inner h1 { font-size: 3.5rem; }
-  .hero-img img { aspect-ratio: 16/10; }
+  .hero-img img,
+  .hero-img video { aspect-ratio: 16/9; }
 
-  .work-grid { grid-template-columns: 1fr; }
-  .work-item.wide { grid-column: span 1; }
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  .work-item.wide { grid-column: span 2; }
 
   .stills-grid { grid-template-columns: repeat(2, 1fr); }
   .still-item.landscape { grid-column: span 2; }
@@ -436,6 +438,9 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .work-item.wide { grid-column: span 1; }
+
   .nav-links {
     position: fixed; top: 0; right: -100%;
     width: 260px; height: 100vh;
