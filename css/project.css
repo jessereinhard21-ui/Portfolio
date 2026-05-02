@@ -115,10 +115,32 @@ img, video { display: block; max-width: 100%; }
   background: #000;
 }
 
-.project-hero video {
+.project-hero video,
+.project-hero iframe,
+.project-hero img {
   width: 100%;
-  height: auto;
   display: block;
+  border: 0;
+}
+
+.project-hero iframe {
+  aspect-ratio: 16 / 9;
+}
+
+/* Placeholder hero for projects without media yet */
+.project-hero.placeholder-hero {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1c1c1c, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-hero.placeholder-hero span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text);
 }
 
 /* Description — narrow column, readable */
@@ -151,6 +173,37 @@ img, video { display: block; max-width: 100%; }
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Masonry-style gallery — images at native ratio, no cropping */
+.project-grid.gallery {
+  display: block;
+  column-count: 3;
+  column-gap: var(--gap);
+}
+
+.project-grid.gallery .project-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: auto;
+  background: transparent;
+  margin-bottom: var(--gap);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+.project-grid.gallery .project-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: unset;
+}
+
+@media (max-width: 900px) {
+  .project-grid.gallery { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .project-grid.gallery { column-count: 1; }
+}
+
 .project-media {
   overflow: hidden;
   border-radius: 10px;
@@ -169,6 +222,98 @@ img, video { display: block; max-width: 100%; }
 .project-media:hover video,
 .project-media:hover img {
   transform: scale(1.03);
+}
+
+/* Featured image — sits between page intro and Shows section */
+.feature-image {
+  width: 100%;
+  margin-bottom: 4rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Drone show sections — title + desc + videos + optional images */
+.shows-heading {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.4rem;
+  color: var(--heading);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 2rem 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.show-section {
+  margin-bottom: 10rem;
+  scroll-margin-top: 90px;
+}
+
+.show-title {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.4rem;
+  color: var(--heading);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.show-desc {
+  max-width: 680px;
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.show-videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.show-videos.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.show-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+}
+
+.show-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.show-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+
+.show-images.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.show-images img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
 }
 
 /* External link button */
@@ -223,6 +368,11 @@ img, video { display: block; max-width: 100%; }
 
   .project-grid,
   .project-grid.three {
+    grid-template-columns: 1fr;
+  }
+
+  .show-videos.two,
+  .show-images.two {
     grid-template-columns: 1fr;
   }
 

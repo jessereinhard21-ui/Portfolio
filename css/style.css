@@ -58,7 +58,7 @@ nav {
   padding: 0 var(--side);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 70px;
 }
 
@@ -69,7 +69,7 @@ nav {
   letter-spacing: 0.5px;
 }
 
-.nav-links { display: flex; gap: 2.5rem; }
+.nav-links { display: flex; gap: 1.25rem; }
 
 .nav-link {
   font-size: 0.72rem;
@@ -95,12 +95,12 @@ nav {
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   align-items: center;
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--side);
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .hero-inner h1 {
@@ -139,10 +139,58 @@ nav {
   padding: 4rem var(--side) 6rem;
 }
 
+/* Tab nav for category filtering */
+.work-nav {
+  display: flex;
+  gap: 2.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.work-tab {
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text);
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.work-tab:hover {
+  color: var(--heading);
+}
+
+.work-tab.active {
+  color: var(--accent);
+}
+
+.work-desc {
+  max-width: 680px;
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
+}
+
+/* Show only the active group */
+.work-group {
+  display: none;
+}
+
+.work-group.active {
+  display: block;
 }
 
 .work-item {
@@ -157,14 +205,84 @@ nav {
   grid-column: span 2;
 }
 
-.work-item video {
+.work-item video,
+.work-item img {
   width: 100%; height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.work-item:hover video {
+.work-item:hover video,
+.work-item:hover img {
   transform: scale(1.03);
+}
+
+.art-item {
+  cursor: pointer;
+}
+
+/* Slight base zoom on art tiles so the overflow-clipped tile hides
+   any baked-in border lines on the source images */
+.art-item img {
+  transform: scale(1.04);
+}
+
+.art-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Triple thumbnail — three images side by side at native aspect (no cropping) */
+.work-item.triple {
+  display: flex;
+  gap: 4px;
+  background: #0a0a0a;
+}
+
+.work-item.triple img {
+  width: 33.333%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.work-item.triple:hover img {
+  transform: none;
+}
+
+/* Placeholder cards for projects without thumbnails yet */
+.work-item.placeholder {
+  background: linear-gradient(135deg, #1c1c1c, #0a0a0a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-item.placeholder::after {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--text);
+  opacity: 0.35;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.work-item.placeholder:hover::after {
+  opacity: 0.7;
+  transform: rotate(45deg);
+}
+
+.work-item.placeholder .work-label {
+  background: linear-gradient(transparent 60%, rgba(0,0,0,0.85));
+}
+
+/* Show entire image without cropping (object-fit: contain) */
+.work-item.fit-contain {
+  background: #0a0a0a;
+}
+
+.work-item.fit-contain video,
+.work-item.fit-contain img {
+  object-fit: contain;
 }
 
 .work-label {
@@ -314,11 +432,19 @@ nav {
   background: rgba(0,0,0,0.95);
 }
 
-.lb-img {
+.lb-img,
+.lb-video {
   position: relative; z-index: 1;
   max-width: 85%; max-height: 85vh;
   object-fit: contain;
 }
+
+/* Trim ~1.5% off each edge to hide baked-in border lines on some images */
+.lb-img { clip-path: inset(1.5%); }
+
+.lb-video { display: none; }
+.lightbox.video-mode .lb-img { display: none; }
+.lightbox.video-mode .lb-video { display: block; }
 
 .lb-close {
   position: absolute; top: 1.5rem; right: 1.5rem;
@@ -374,6 +500,18 @@ nav {
 .about-body p {
   margin-bottom: 1.25rem;
   line-height: 1.8;
+}
+
+.about-photo {
+  margin-top: 2.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .about-links {

@@ -15,11 +15,10 @@
   <!-- NAV -->
   <header>
     <nav>
-      <a href="#" class="logo">Jesse Reinhard</a>
       <div class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
         <a href="#work" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="JR-Resume (2).pdf" class="nav-link" target="_blank">Resume</a>
       </div>
       <div class="hamburger"><span></span><span></span><span></span></div>
     </nav>
@@ -29,107 +28,132 @@
   <section class="hero" id="home">
     <div class="hero-inner">
       <h1>Jesse<br>Reinhard</h1>
-      <p>Motion Design & 3D Art</p>
+      <p>Artist and Programmer</p>
     </div>
     <div class="hero-img">
-      <video autoplay loop muted playsinline poster="./artwork/environments/DancingCircles.png">
+      <video autoplay loop muted playsinline poster="./assets/exploration/environments/DancingCircles.png">
         <source src="./assets/hero/flamingoboat.webm" type="video/webm">
-        <img src="./artwork/environments/DancingCircles.png" alt="Jesse Reinhard">
+        <img src="./assets/exploration/environments/DancingCircles.png" alt="Jesse Reinhard">
       </video>
     </div>
   </section>
 
   <!-- WORK -->
   <section class="work" id="work">
-    <div class="work-grid">
 
-      <a href="SCOTTY.html" class="work-item">
-        <video autoplay loop muted playsinline><source src="./assets/projects/scotty/NEONSCOTT.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>Scotty — DJ Visuals</span></div>
-      </a>
+    <nav class="work-nav">
+      <button class="work-tab active" data-target="motion">Projects</button>
+      <a href="Verge.html" class="work-tab">Drones</a>
+      <button class="work-tab" data-target="art">Art</button>
+    </nav>
 
-      <a href="VANTA.html" class="work-item">
-        <video autoplay loop muted playsinline><source src="./assets/projects/vanta/VANTAo.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>Vanta — 3D Motion</span></div>
-      </a>
+    <!-- MOTION -->
+    <div class="work-group active" data-group="motion">
+      <p class="work-desc">Commercial and concept work — motion design, 3D, and animation made for brands, DJs, and visual storytelling.</p>
+      <div class="work-grid">
 
-      <a href="UNDERARMOUR.html" class="work-item">
-        <video autoplay loop muted playsinline><source src="./assets/projects/underarmour/UNDERARMOUR_v1.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>Under Armour — Concept AD</span></div>
-      </a>
+        <a href="OSLSHADERS.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/osl-shaders/NeonSignGlowFinal.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>OSL Shaders — 3D & Shaders</span></div>
+        </a>
 
-      <a href="NikeFactory.html" class="work-item">
-        <video autoplay loop muted playsinline><source src="./assets/projects/nike/Just Do it_25sec.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>Nike Factory — Animation</span></div>
-      </a>
+        <a href="SCOTTY.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/scotty/NEONSCOTT.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Scotty — DJ Visuals</span></div>
+        </a>
 
-      <a href="Verge.html" class="work-item wide">
-        <video autoplay loop muted playsinline><source src="./assets/projects/verge/METALLLL_2024-08-01_16-45-47.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>Verge Aero — Drone Visuals</span></div>
-      </a>
+        <a href="VANTA.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/vanta/VANTAo.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Vanta — 3D Motion</span></div>
+        </a>
 
-      <a href="OSLSHADERS.html" class="work-item">
-        <video autoplay loop muted playsinline><source src="./assets/projects/osl-shaders/NeonSignGlowFinal.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>OSL Shaders — 3D & Shaders</span></div>
-      </a>
+        <a href="UNDERARMOUR.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/underarmour/UNDERARMOUR_v1.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Under Armour — Concept AD</span></div>
+        </a>
 
-      <a href="DETONATE.html" class="work-item">
-        <video autoplay loop muted playsinline><source src="./assets/projects/detonate/DETONATE_v3.mp4" type="video/mp4"></video>
-        <div class="work-label"><span>Detonate — Branding & Motion</span></div>
-      </a>
+        <a href="NikeFactory.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/nike/Just Do it_25sec.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Nike Factory — Animation</span></div>
+        </a>
 
-    </div>
+        <a href="ALLSTAR.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/allstar/ALL_v8.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Allstar — Motion</span></div>
+        </a>
 
-    <!-- STILLS -->
-    <h2 class="stills-heading">Stills & Artwork</h2>
+        <a href="JUSTBREATHE.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/justbreathe/Just_Breathe_Smooth.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Just Breathe — Motion</span></div>
+        </a>
 
-    <div class="stills-group">
-      <button class="group-label" aria-expanded="false"><span>01</span>Characters<em>5 works</em><i class="uil uil-plus"></i></button>
-      <div class="stills-grid">
-        <div class="still-item"><img src="./artwork/characters/MariaMech.png" alt="Maria Mech"></div>
-        <div class="still-item"><img src="./artwork/characters/MariaMech1.png" alt="Maria Mech Poster"></div>
-        <div class="still-item"><img src="./artwork/characters/MariaMech2.png" alt="Maria Mech Armor"></div>
-        <div class="still-item"><img src="./artwork/characters/MariaMech3.png" alt="Maria Mech Close-Up"></div>
-        <div class="still-item"><img src="./artwork/characters/MariaMech4.png" alt="Maria Mech Glitch"></div>
+        <!-- Hidden: Fleshwater
+        <a href="FLESHWATER.html" class="work-item">
+          <img loading="lazy" src="https://img.youtube.com/vi/rglZYBYqYiE/maxresdefault.jpg" alt="Fleshwater — 3D & Concept">
+          <div class="work-label"><span>Fleshwater — 3D & Concept</span></div>
+        </a>
+        -->
+
+        <a href="STREAMDIFFUSION.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/streamdiffusion/MagicJump.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>TouchDesigner × StreamDiffusion</span></div>
+        </a>
+
+        <a href="COMFYUI.html" class="work-item triple">
+          <img loading="lazy" src="./assets/projects/comfyui/TokoyoFashion.jpg" alt="ComfyUI fashion LoRA — Tokyo">
+          <img loading="lazy" src="./assets/projects/comfyui/MexicoCity-02.jpg" alt="ComfyUI fashion LoRA — Mexico City">
+          <img loading="lazy" src="./assets/projects/comfyui/Detroit_Fashion_v4.jpg" alt="ComfyUI fashion LoRA — Detroit">
+          <div class="work-label"><span>ComfyUI — Fashion LoRA</span></div>
+        </a>
+
+        <a href="RUNWAYCONCEPT.html" class="work-item">
+          <video loop muted playsinline preload="none"><source data-src="./assets/projects/runwayconcept/Runway2000.mp4" type="video/mp4"></video>
+          <div class="work-label"><span>Runway Concept — AI Fashion Film</span></div>
+        </a>
+
+        <!-- Hidden: Detonate
+        <a href="DETONATE.html" class="work-item fit-contain">
+          <img loading="lazy" src="./assets/projects/detonate/DetonateLogos-05.png" alt="Detonate — Branding & Motion">
+          <div class="work-label"><span>Detonate — Branding & Motion</span></div>
+        </a>
+        -->
+
       </div>
     </div>
 
-    <div class="stills-group">
-      <button class="group-label" aria-expanded="false"><span>02</span>Bar Scenes<em>3 works</em><i class="uil uil-plus"></i></button>
-      <div class="stills-grid">
-        <div class="still-item landscape"><img src="./artwork/bar-scenes/JoleneBright.png" alt="Jolene Neon"></div>
-        <div class="still-item landscape"><img src="./artwork/bar-scenes/Jolene.png" alt="Jolene B&W"></div>
-        <div class="still-item"><img src="./artwork/bar-scenes/JoleneCut.png" alt="Jolene Cut"></div>
+    <!-- ART -->
+    <div class="work-group" data-group="art">
+      <p class="work-desc">Personal experiments — stills, illustrations, and concept art. Click any collection to open a lightbox you can flip through.</p>
+      <div class="work-grid">
+
+        <div class="work-item art-item" data-collection="characters">
+          <img loading="lazy" src="./assets/exploration/characters/MariaMech.png" alt="Characters collection">
+          <div class="work-label"><span>Characters — 13 works</span></div>
+        </div>
+
+        <div class="work-item art-item" data-collection="environments">
+          <img loading="lazy" src="./assets/exploration/environments/InTheTrees.png" alt="Environments collection">
+          <div class="work-label"><span>Environments — 10 works</span></div>
+        </div>
+
+        <div class="work-item art-item" data-collection="art">
+          <img loading="lazy" src="./assets/exploration/art/studio_010.jpg" alt="Art collection">
+          <div class="work-label"><span>Art — 18 works</span></div>
+        </div>
+
+        <div class="work-item art-item" data-collection="fashion">
+          <img loading="lazy" src="./assets/exploration/Fashion/studio_036.jpg" alt="Fashion collection">
+          <div class="work-label"><span>Fashion — 10 works</span></div>
+        </div>
+
+        <div class="work-item art-item" data-collection="photography">
+          <img loading="lazy" src="./assets/exploration/photography/20180124_135438.jpg" alt="Photography collection">
+          <div class="work-label"><span>Photography — 3 works</span></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="stills-group">
-      <button class="group-label" aria-expanded="false"><span>03</span>Environments<em>4 works</em><i class="uil uil-plus"></i></button>
-      <div class="stills-grid">
-        <div class="still-item"><img src="./artwork/environments/InTheTrees.png" alt="In The Trees"></div>
-        <div class="still-item"><img src="./artwork/environments/Fog.png" alt="Fog"></div>
-        <div class="still-item"><img src="./artwork/environments/floater0041.png" alt="Floater"></div>
-        <div class="still-item"><img src="./artwork/environments/DancingCircles.png" alt="Dancing Circles"></div>
-      </div>
-    </div>
-
-    <div class="stills-group">
-      <button class="group-label" aria-expanded="false"><span>04</span>Abstract<em>3 works</em><i class="uil uil-plus"></i></button>
-      <div class="stills-grid">
-        <div class="still-item"><img src="./artwork/abstract/AP-art-3.png" alt="Cityscape"></div>
-        <div class="still-item landscape"><img src="./artwork/abstract/double-double-1.2_0058_00000.png" alt="Double Double"></div>
-        <div class="still-item landscape"><img src="./artwork/abstract/Synthwave Portfolio.png" alt="Wave Lines"></div>
-      </div>
-    </div>
-
-    <div class="stills-group">
-      <button class="group-label" aria-expanded="false"><span>05</span>Compositions<em>3 works</em><i class="uil uil-plus"></i></button>
-      <div class="stills-grid">
-        <div class="still-item landscape"><img src="./artwork/compositions/Synthwave Portfolio1 (1).png" alt="Gallery Collage"></div>
-        <div class="still-item landscape"><img src="./artwork/compositions/Synthwave Portfolio1 (2).png" alt="Color Rooms I"></div>
-        <div class="still-item landscape"><img src="./artwork/compositions/Synthwave Portfolio1 (3).png" alt="Color Rooms II"></div>
-      </div>
-    </div>
   </section>
 
   <!-- ABOUT -->
@@ -151,9 +175,16 @@
           I work fast, solve problems visually, and I'm always pushing into new tools:
           Cinema 4D, After Effects, Blender, AI-assisted workflows.
         </p>
+        <p>
+          Off-screen, I play goalie for the Texas Longhorns hockey team — same
+          problem-solving instinct, just with a stick instead of a stylus.
+        </p>
         <div class="about-links">
-          <a href="JR-Resume (2).pdf" target="_blank">Resume <i class="uil uil-arrow-right"></i></a>
+          <a href="JR-Resume-4.29.26.pdf" target="_blank">Resume <i class="uil uil-arrow-right"></i></a>
           <a href="mailto:jesse@example.com">Contact <i class="uil uil-arrow-right"></i></a>
+        </div>
+        <div class="about-photo">
+          <img loading="lazy" src="./assets/about/hockey.jpg" alt="Jesse playing goalie for the Texas Longhorns">
         </div>
       </div>
     </div>
@@ -169,6 +200,7 @@
     <button class="lb-close"><i class="uil uil-times"></i></button>
     <button class="lb-nav lb-prev"><i class="uil uil-angle-left-b"></i></button>
     <img class="lb-img" src="" alt="">
+    <video class="lb-video" controls loop playsinline></video>
     <button class="lb-nav lb-next"><i class="uil uil-angle-right-b"></i></button>
   </div>
 

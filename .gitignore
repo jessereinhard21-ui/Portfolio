@@ -3,6 +3,10 @@ large_files/
 assets/_unused/
 PortFolio of all my works/
 
+# Drone mp4s over GitHub's 100MB limit — embedded as YouTube instead
+assets/drones/AGN_Festival/AGN_Festival_v1_2025-06-13_16-51-50.mp4
+assets/drones/Notre-Dame/OMNI_Notre_Dame_2025_v1_2025-06-09_11-01-19.mp4
+
 # Local tooling
 .claude/
 
